@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<div id="app">
+    <h3>v-if</h3>
+    <div v-if="seen">This can be seen</div>
+
+    <h3>v-for</h3>
+    <ul>
+        <li v-for="detail in details">
+            {{ detail }}
+        </li>
+    </ul>
+    <ol>
+        <li v-for="todo in todos">
+            {{ todo.text }}
+        </li>
+    </ol>
+    <ul>
+        <li v-for="item in items">
+            {{ item.value }}
+        </li>
+    </ul>
+    <p>{{ message }}</p>
+    <div class="h4">{{ number }}</div>
+
+    <h3>v-bind</h3>
+    <div v-bind:title="message2">hover over here - v-bind</div>
+    <div :title="message2">hover over here - v-bind shorthand</div>
+    <a v-bind:href="url">Visit my site</a>
+
+    <h3>v-model</h3>
+    <input v-model="message2">
+</div>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
