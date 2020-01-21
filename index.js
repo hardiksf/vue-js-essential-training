@@ -1,4 +1,10 @@
 const data = {
+    'max': 15,
+    items2: [
+        { 'name': '10', 'price': 10, 'value': 'New', 'onclick': 'CreateNewDoc()' },
+        { 'name': '20', 'price': 20, 'value': 'Open', 'onclick': 'OpenDoc()' },
+        { 'name': '30', 'price': 30, 'value': 'Close', 'onclick': 'CloseDoc()' },
+    ],
     seen: true,
     'message': 'enter message here',
     'detail': 'detail goes here',
