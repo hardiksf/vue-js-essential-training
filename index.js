@@ -1,4 +1,5 @@
 const data = {
+    'addThis': ``,
     'max': 15,
     items2: [
         { 'name': '10', 'price': 10, 'value': 'New', 'onclick': 'CreateNewDoc()' },
@@ -28,6 +29,12 @@ const data = {
 const app = new Vue({
     el: '#app',
     data: data,
+    methods: {
+        addThisFn: function () {
+            this.details.push(this.addThis);
+            this. addThis = ``;
+        },
+    },
 });
 
 app.message = 'change message';

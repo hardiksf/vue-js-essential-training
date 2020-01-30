@@ -1,48 +1,55 @@
 <!DOCTYPE html>
 
-<div id="app">
-    <p>:value only sets. You can not edit it</p>
-    <p>sets and is edited </p>
-    <label for="formMax">Max: </label>
-    <input type="text" id="formMax" v-model="max">
-    </br><input type="range" min="0" max="50" v-model="max">
-    <div v-for="item in items2" v-if="item.price<max"> {{ item.name }} </div>
-
-    <h3>v-if</h3>
-    <div v-if="seen">This can be seen</div>
-    v-if block is present in DOM only if it evaluates to true.
-    <h3>v-show</h3> v-show is present in DOM regardless it evaluates true or false. It it evaluates to false, it has
-    property of display none.
-
-    <h3>v-for</h3>
-    <ul>
-        <li v-for="detail in details">
-            {{ detail }}
-        </li>
-    </ul>
-    <ol>
-        <li v-for="todo in todos">
-            {{ todo.text }}
-        </li>
-    </ol>
-    <ul>
-        <li v-for="item in items">
-            {{ item.value }}
-        </li>
-    </ul>
-    <p>{{ message }}</p>
-    <div class="h4">{{ number }}</div>
-
-    <h3>v-bind</h3>
-    <div v-bind:title="message2">hover over here - v-bind</div>
-    <div :title="message2">hover over here - v-bind shorthand</div>
-    <a v-bind:href="url">Visit my site</a>
-
-    <h3>v-model</h3>
-    <input v-model="message2">
-</div>
-
 <body>
+
+    <div id="app">
+        <p>Add to this list:</p>
+        <input type="text" v-model="addThis" @keyup.enter="addThisFn">
+        <button @click="addThisFn">+ADD</button>
+        <ul>
+            <li v-for="detail in details">
+                {{ detail }}
+            </li>
+        </ul>
+
+
+        <p>:value only sets. You can not edit it</p>
+        <p>sets and is edited </p>
+        <label for="formMax">Max: </label>
+        <input type="text" id="formMax" v-model="max">
+        </br><input type="range" min="0" max="50" v-model="max">
+        <div v-for="item in items2" v-if="item.price<max"> {{ item.name }} </div>
+
+        <h3>v-if</h3>
+        <div v-if="seen">This can be seen</div>
+        v-if block is present in DOM only if it evaluates to true.
+        <h3>v-show</h3> v-show is present in DOM regardless it evaluates true or false. It it evaluates to false, it has
+        property of display none.
+
+        <h3>v-for</h3>
+
+        <ol>
+            <li v-for="todo in todos">
+                {{ todo.text }}
+            </li>
+        </ol>
+        <ul>
+            <li v-for="item in items">
+                {{ item.value }}
+            </li>
+        </ul>
+        <p>{{ message }}</p>
+        <div class="h4">{{ number }}</div>
+
+        <h3>v-bind</h3>
+        <div v-bind:title="message2">hover over here - v-bind</div>
+        <div :title="message2">hover over here - v-bind shorthand</div>
+        <a v-bind:href="url">Visit my site</a>
+
+        <h3>v-model</h3>
+        <input v-model="message2">
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="index.js"></script>
 </body>
