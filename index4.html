@@ -8,6 +8,25 @@
     <link rel="stylesheet" href="styles.css">
 
     <div id="app">
+        <p>
+            <span v-for="n in 10">{{ n }}</span>
+        </p>
+        <ul v-for="numberSet in numberSets">
+            <li v-for="number in oddNumbers(numberSet)">{{ number }}</li>
+        </ul>
+        <li v-for="number in oddNumbersComputed"> {{ number }}</li>
+        <ul>
+            <li v-for="(value, key, index) in myObject">
+                value: {{ value }},
+                key: {{ key }},
+                index: {{ index }}
+            </li>
+        </ul>
+        <ul>
+            <li v-for="(item, index) of groceryList">
+                {{ item.text }} index: {{ index }}
+            </li>
+        </ul>
         <button-counter v-bind:class="{'upper-case': isTrue}"></button-counter>
         <p v-bind:class="classObject">My paragraph</p>
         <p v-bind:class="{red: isRed}">
