@@ -11,3 +11,12 @@
     width:7%;
     padding: 5px;
 }
+.red {
+    background:red;
+    color: white;
+    width:10%;
+    padding: 5px;
+}
+.upper-case {
+    text-transform: uppercase;
+}
