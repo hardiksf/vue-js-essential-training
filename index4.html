@@ -1,0 +1,30 @@
+<html>
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <link rel="stylesheet" href="styles.css">
+
+    <div id="app">
+        <button-counter v-bind:class="{'upper-case': isTrue}"></button-counter>
+        <p v-bind:class="classObject">My paragraph</p>
+        <p v-bind:class="{red: isRed}">
+            {{ reverseText }}
+        </p>
+        {{ myText }}
+        <p v-html="myHtml"> </p>
+        <div v-bind:id="myText">id</div>
+        <div :id="myText">id</div>
+        <button v-bind:disabled="isButtonDisabled">Button</button>
+        <p v-if="isButtonDisabled">Now you see me</p>
+        <ol>
+            <todo-item v-for="item in groceryList" v-bind:todo="item" v-bind:key="item.id"></todo-item>
+        </ol>
+    </div>
+
+    <script src="index4.js"></script>
+</body>
+
+</html>
